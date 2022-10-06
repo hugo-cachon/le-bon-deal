@@ -21,6 +21,7 @@ services:
         restart: always
         volumes:
             - db-data:/var/lib/mysql
+            - ./database/dump.sql:/docker-entrypoint-initdb.d/dump.sql
         environment:
             MYSQL_ROOT_PASSWORD: 'ChangeMeLater'
         networks:
