@@ -1,7 +1,11 @@
 <?php //%5BC%5DApp%255CKernel
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 return [PHP_INT_MAX, 1665062955];
 =======
 return [PHP_INT_MAX, 1665063033];
 >>>>>>> 62eb628 (clear)
+=======
+return [PHP_INT_MAX, 1665064313];
+>>>>>>> a38cf77 (debug)
