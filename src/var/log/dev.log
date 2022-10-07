@@ -382,6 +382,7 @@
 [2022-10-07T13:43:59.012196+00:00] console.CRITICAL: Error thrown while running command "'d:f:l'". Message: "There are no commands defined in the "d:f" namespace.  Did you mean one of these?     dbal     debug     doctrine     doctrine:cache     doctrine:database     doctrine:mapping     doctrine:migrations     doctrine:query     doctrine:schema" {"exception":"[object] (Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException(code: 0): There are no commands defined in the \"d:f\" namespace.\n\nDid you mean one of these?\n    dbal\n    debug\n    doctrine\n    doctrine:cache\n    doctrine:database\n    doctrine:mapping\n    doctrine:migrations\n    doctrine:query\n    doctrine:schema at /var/www/html/vendor/symfony/console/Application.php:622)","command":"'d:f:l'","message":"There are no commands defined in the \"d:f\" namespace.\n\nDid you mean one of these?\n    dbal\n    debug\n    doctrine\n    doctrine:cache\n    doctrine:database\n    doctrine:mapping\n    doctrine:migrations\n    doctrine:query\n    doctrine:schema"} []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 [2022-10-07T12:33:42.497557+00:00] deprecation.INFO: User Deprecated: The "Monolog\Logger" class is considered final. It may change without further notice as of its next major version. You should not extend it from "Symfony\Bridge\Monolog\Logger". {"exception":"[object] (ErrorException(code: 0): User Deprecated: The \"Monolog\\Logger\" class is considered final. It may change without further notice as of its next major version. You should not extend it from \"Symfony\\Bridge\\Monolog\\Logger\". at /var/www/html/vendor/symfony/error-handler/DebugClassLoader.php:331)"} []
 [2022-10-07T12:33:42.608248+00:00] php.CRITICAL: Uncaught Error: syntax error, unexpected token "<<", expecting end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"<<\", expecting end of file at /var/www/html/var/cache/dev/pools/system/bfj7qvvhcA/0/0/1+Q1qxqgyZhOisMfGuyw:3)"} []
@@ -410,6 +411,8 @@
 [2022-10-07T12:52:59.426571+00:00] php.CRITICAL: Uncaught Error: syntax error, unexpected token "<<", expecting end of file {"exception":"[object] (ParseError(code: 0): syntax error, unexpected token \"<<\", expecting end of file at /var/www/html/var/cache/dev/pools/system/bfj7qvvhcA/0/0/1+Q1qxqgyZhOisMfGuyw:3)"} []
 >>>>>>> momo
 =======
+=======
+>>>>>>> db0b84f (vendor)
 =======
 >>>>>>> db0b84f (vendor)
 [2022-10-07T13:57:54.810455+00:00] deprecation.INFO: User Deprecated: The "Monolog\Logger" class is considered final. It may change without further notice as of its next major version. You should not extend it from "Symfony\Bridge\Monolog\Logger". {"exception":"[object] (ErrorException(code: 0): User Deprecated: The \"Monolog\\Logger\" class is considered final. It may change without further notice as of its next major version. You should not extend it from \"Symfony\\Bridge\\Monolog\\Logger\". at /var/www/html/vendor/symfony/error-handler/DebugClassLoader.php:331)"} []
@@ -468,6 +471,9 @@
 [2022-10-07T13:59:45.625594+00:00] console.DEBUG: Command "doctrine:migrations:migrate" exited with code "1050" {"command":"doctrine:migrations:migrate","code":1050} []
 [2022-10-07T13:59:45.632871+00:00] doctrine.INFO: Disconnecting [] []
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> db0b84f (vendor)
+=======
 >>>>>>> db0b84f (vendor)
 =======
 >>>>>>> db0b84f (vendor)
