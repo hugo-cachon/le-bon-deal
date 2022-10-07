@@ -55,6 +55,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'doctrine/data-fixtures' => array(
+            'pretty_version' => '1.5.3',
+            'version' => '1.5.3.0',
+            'reference' => 'ba37bfb776de763c5bf04a36d074cd5f5a083c42',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/data-fixtures',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'doctrine/dbal' => array(
             'pretty_version' => '3.4.5',
             'version' => '3.4.5.0',
@@ -81,6 +90,15 @@
             'install_path' => __DIR__ . '/../doctrine/doctrine-bundle',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'doctrine/doctrine-fixtures-bundle' => array(
+            'pretty_version' => '3.4.2',
+            'version' => '3.4.2.0',
+            'reference' => '601988c5b46dbd20a0f886f967210aba378a6fd5',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../doctrine/doctrine-fixtures-bundle',
+            'aliases' => array(),
+            'dev_requirement' => true,
         ),
         'doctrine/doctrine-migrations-bundle' => array(
             'pretty_version' => '3.2.2',
@@ -480,6 +498,7 @@
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/monolog-bundle',
             'aliases' => array(),
+<<<<<<< HEAD
             'dev_requirement' => false,
         ),
         'symfony/password-hasher' => array(
@@ -489,6 +508,8 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/password-hasher',
             'aliases' => array(),
+=======
+>>>>>>> main
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
@@ -567,7 +588,11 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/property-access',
             'aliases' => array(),
+<<<<<<< HEAD
             'dev_requirement' => false,
+=======
+            'dev_requirement' => true,
+>>>>>>> main
         ),
         'symfony/property-info' => array(
             'pretty_version' => 'v6.1.3',
@@ -576,7 +601,11 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/property-info',
             'aliases' => array(),
+<<<<<<< HEAD
             'dev_requirement' => false,
+=======
+            'dev_requirement' => true,
+>>>>>>> main
         ),
         'symfony/proxy-manager-bridge' => array(
             'pretty_version' => 'v6.1.0',
@@ -603,6 +632,7 @@
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../symfony/runtime',
             'aliases' => array(),
+<<<<<<< HEAD
             'dev_requirement' => false,
         ),
         'symfony/security-bundle' => array(
@@ -639,6 +669,8 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/security-http',
             'aliases' => array(),
+=======
+>>>>>>> main
             'dev_requirement' => false,
         ),
         'symfony/service-contracts' => array(
