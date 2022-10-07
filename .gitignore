@@ -1,1 +1,2 @@
-src/var/cache/
+/src/var/cache
+/src/var/log
