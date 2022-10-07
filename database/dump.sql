@@ -1,1 +1,1 @@
-create database app;
+create database if not exists app;
