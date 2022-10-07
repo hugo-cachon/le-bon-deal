@@ -7,5 +7,10 @@
 /public/bundles/
 /var/
 /vendor/
+<<<<<<< HEAD
 src/var/cache/
+=======
+/src/var/cache
+/src/var/log
+>>>>>>> feature/users
 ###< symfony/framework-bundle ###
