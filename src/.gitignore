@@ -8,4 +8,6 @@
 /var/
 /vendor/
 src/var/cache/
+src/var/log/dev.log
+
 ###< symfony/framework-bundle ###
