@@ -7,4 +7,7 @@
 /public/bundles/
 /var/
 /vendor/
+src/var/cache/
+/src/var/log
+
 ###< symfony/framework-bundle ###
