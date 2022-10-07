@@ -1,11 +1,3 @@
 <?php //%5BC%5DApp%255CKernel%2523loadRoutes
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-return [PHP_INT_MAX, 1665062956];
-=======
-return [PHP_INT_MAX, 1665063035];
->>>>>>> 62eb628 (clear)
-=======
-return [PHP_INT_MAX, 1665064314];
->>>>>>> a38cf77 (debug)
+return [PHP_INT_MAX, 1665094311];
