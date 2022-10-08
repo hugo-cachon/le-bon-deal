@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Zenstruck\\Foundry\\' => array($vendorDir . '/zenstruck/foundry/src'),
-    'Zenstruck\\' => array($vendorDir . '/zenstruck/callback/src', $vendorDir . '/zenstruck/assert/src'),
+    'Zenstruck\\' => array($vendorDir . '/zenstruck/assert/src', $vendorDir . '/zenstruck/callback/src'),
     'Symfony\\Polyfill\\Php81\\' => array($vendorDir . '/symfony/polyfill-php81'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Php73\\' => array($vendorDir . '/symfony/polyfill-php73'),

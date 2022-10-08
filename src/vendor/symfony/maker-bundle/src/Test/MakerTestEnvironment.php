@@ -94,7 +94,7 @@ final class MakerTestEnvironment
                 'replace' => 'use '.$rootNamespace.'\\Kernel',
             ],
             [
-                'filename' => 'public/index.php',
+                'filename' => 'public/indexController.php',
                 'find' => 'use App\\Kernel',
                 'replace' => 'use '.$rootNamespace.'\\Kernel',
             ],

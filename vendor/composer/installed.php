@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '610136ce8278cd44ca1c6ad68b6c33f3399d3df1',
+        'reference' => '4d7d3b3af266eff79aafead255bd3ecda5536c2a',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '610136ce8278cd44ca1c6ad68b6c33f3399d3df1',
+            'reference' => '4d7d3b3af266eff79aafead255bd3ecda5536c2a',
             'dev_requirement' => false,
         ),
         'doctrine/event-manager' => array(
