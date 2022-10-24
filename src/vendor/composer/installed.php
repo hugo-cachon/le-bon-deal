@@ -498,7 +498,6 @@
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/monolog-bundle',
             'aliases' => array(),
-<<<<<<< HEAD
             'dev_requirement' => false,
         ),
         'symfony/password-hasher' => array(
@@ -508,8 +507,6 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/password-hasher',
             'aliases' => array(),
-=======
->>>>>>> main
             'dev_requirement' => false,
         ),
         'symfony/polyfill-ctype' => array(
@@ -588,11 +585,8 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/property-access',
             'aliases' => array(),
-<<<<<<< HEAD
             'dev_requirement' => false,
-=======
             'dev_requirement' => true,
->>>>>>> main
         ),
         'symfony/property-info' => array(
             'pretty_version' => 'v6.1.3',
@@ -601,11 +595,8 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/property-info',
             'aliases' => array(),
-<<<<<<< HEAD
             'dev_requirement' => false,
-=======
             'dev_requirement' => true,
->>>>>>> main
         ),
         'symfony/proxy-manager-bridge' => array(
             'pretty_version' => 'v6.1.0',
@@ -632,7 +623,6 @@
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../symfony/runtime',
             'aliases' => array(),
-<<<<<<< HEAD
             'dev_requirement' => false,
         ),
         'symfony/security-bundle' => array(
@@ -669,8 +659,6 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/security-http',
             'aliases' => array(),
-=======
->>>>>>> main
             'dev_requirement' => false,
         ),
         'symfony/service-contracts' => array(
