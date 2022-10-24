@@ -3,6 +3,7 @@
 namespace App\Factory;
 
 use App\Entity\Comment;
+use App\Factory\UserFactory;
 use App\Repository\CommentRepository;
 use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
@@ -41,7 +42,9 @@ final class CommentFactory extends ModelFactory
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
             'text' => self::faker()->text(),
-            'created_at' => self::faker()->dateTime('now'), // TODO add DATETIME ORM type manually
+            'created_at' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()), // TODO add DATETIME ORM type manually
+            'updated_at' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
+            'user' => UserFactory::random()
         ];
     }
 

@@ -32,6 +32,8 @@ final class UsersFactory extends ModelFactory
 {
     private UserPasswordHasherInterface $hasher;
 
+    private array $rolesAvailable = ["ROLE_USER", "ROLE_ADMIN"];
+
     public function __construct(UserPasswordHasherInterface $hasher)
     {
         parent::__construct();
@@ -48,7 +50,10 @@ final class UsersFactory extends ModelFactory
             'lastname' => self::faker()->lastName(),
             'email' => self::faker()->email(),
             'createAd' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
+            'role' => $this->rolesAvailable[rand(0, count($this->rolesAvailable))],
             'updatedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
+            'password' => self::faker()->password()
+
         ];
     }
 
