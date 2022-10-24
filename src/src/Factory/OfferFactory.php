@@ -4,6 +4,7 @@ namespace App\Factory;
 
 use App\Entity\Offer;
 use App\Repository\OfferRepository;
+use App\Factory\UsersFactory;
 use Zenstruck\Foundry\RepositoryProxy;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
@@ -29,6 +30,9 @@ use Zenstruck\Foundry\Proxy;
  */
 final class OfferFactory extends ModelFactory
 {
+
+    private array $comment = [];
+
     public function __construct()
     {
         parent::__construct();
@@ -45,8 +49,10 @@ final class OfferFactory extends ModelFactory
             'city' => self::faker()->text(),
             'created_at' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()), // TODO add DATETIME ORM type manually
             'update_at' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()), // TODO add DATETIME ORM type manually
-            'user' => UserFactory::random(),
-            'comment' => CommentFactory::random()
+            'user' => UsersFactory::random(),
+            //'comment' => $this->comment[CommentFactory::random()],
+            'img' => null,
+            'price' => self::faker()->randomFloat(1),
         ];
     }
 

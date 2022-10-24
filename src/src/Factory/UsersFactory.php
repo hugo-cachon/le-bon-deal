@@ -32,7 +32,7 @@ final class UsersFactory extends ModelFactory
 {
     private UserPasswordHasherInterface $hasher;
 
-    private array $rolesAvailable = ["ROLE_USER", "ROLE_ADMIN"];
+    private array $rolesAvailable = ["ROLE_ADMIN", "ROLE_SUPERADMIN"];
 
     public function __construct(UserPasswordHasherInterface $hasher)
     {
@@ -44,16 +44,18 @@ final class UsersFactory extends ModelFactory
 
     protected function getDefaults(): array
     {
+//        $roles = [];
+//        $roles[] = $this->rolesAvailable[rand(0, count($this->rolesAvailable) - 1)];
+
+
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
             'firstname' => self::faker()->firstName(),
             'lastname' => self::faker()->lastName(),
             'email' => self::faker()->email(),
             'createAd' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
-            'role' => $this->rolesAvailable[rand(0, count($this->rolesAvailable))],
             'updatedAt' => \DateTimeImmutable::createFromMutable(self::faker()->dateTime()),
-            'password' => self::faker()->password()
-
+            'roles' => $this->rolesAvailable,
         ];
     }
 
@@ -62,8 +64,7 @@ final class UsersFactory extends ModelFactory
         // see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization
         return $this->afterInstantiate(function(Users $users): void {
             $users->setPassword($this->hasher->hashPassword($users, "password"));
-        })
-        ;
+        });
     }
 
     protected static function getClass(): string

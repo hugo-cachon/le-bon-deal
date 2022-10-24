@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\TagRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: TagRepository::class)]
@@ -15,8 +16,8 @@ class Tag
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: Types::JSON)]
+    private array $name = [];
 
     #[ORM\ManyToMany(targetEntity: Offer::class, mappedBy: 'tag')]
     private Collection $offers;
@@ -31,12 +32,12 @@ class Tag
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getName(): ?array
     {
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(array $name): self
     {
         $this->name = $name;
 
