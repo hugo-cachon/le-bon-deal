@@ -42,7 +42,7 @@ final class TagFactory extends ModelFactory
     {
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
-            'name' => $this->Tag[rand(0, count($this->Tag))],
+            'name' => $this->Tag,
         ];
     }
 

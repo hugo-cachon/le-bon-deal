@@ -3,11 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use App\Entity\Comment;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use PhpParser\Comment;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -31,15 +31,18 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $password = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: Types::JSON)]
     private $roles = [];
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createAd = null;
 
+
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
-    private \DateTimeImmutable $createdAd;
+
+
+
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Offer::class)]
     private Collection $offers;
@@ -107,17 +110,7 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
  
-    public function getCreatedAd(): ?\DateTimeImmutable
-    {
-        return $this->createdAd;
-    }
 
-    public function setCreatedAd(\DateTimeImmutable $createdAd): self
-    {
-        $this->createdAd = $createdAd;
-
-        return $this;
-    }
 
     public function getUpdatedAt(): \DateTimeImmutable
     {
@@ -215,5 +208,21 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    /**
+     * @return \DateTimeImmutable|null
+     */
+    public function getCreateAd(): ?\DateTimeImmutable
+    {
+        return $this->createAd;
+    }
+
+    /**
+     * @param \DateTimeImmutable|null $createAd
+     */
+    public function setCreateAd(?\DateTimeImmutable $createAd): void
+    {
+        $this->createAd = $createAd;
     }
 }
