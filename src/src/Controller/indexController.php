@@ -17,7 +17,7 @@ class indexController extends AbstractController {
 
             'tag' => $tag,
             'product' => $product,
-            'Testimonials' => $testimonials
+            'testimonials' => $testimonials
         ]);
     }
 
