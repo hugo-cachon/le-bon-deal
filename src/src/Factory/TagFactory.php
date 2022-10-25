@@ -29,7 +29,7 @@ use Zenstruck\Foundry\Proxy;
  */
 final class TagFactory extends ModelFactory
 {
-    private array $Tag = ["Voiture", "Beauté", "Jouet"];
+    private array $Tag = ["Voiture", "Beauté", "Jouet", "Jeux", "Electronique"];
 
     public function __construct()
     {
@@ -42,16 +42,14 @@ final class TagFactory extends ModelFactory
     {
         return [
             // TODO add your default values here (https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#model-factories)
-            'name' => $this->Tag,
+            'name' => self::faker()->randomElement(["Voiture", "Beauté", "Jouet", "Jeux", "Electronique"]),
         ];
     }
 
     protected function initialize(): self
     {
         // see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#initialization
-        return $this
-            // ->afterInstantiate(function(Tag $tag): void {})
-        ;
+        return $this;
     }
 
     protected static function getClass(): string

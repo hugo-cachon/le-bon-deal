@@ -14,6 +14,7 @@ use Doctrine\Persistence\ObjectManager;
 class AppFixtures extends Fixture
 {
 
+    private array $Tag = ["Voiture", "Beauté", "Jouet", "Jeux", "Electronique"];
 
     public function load(ObjectManager $manager): void
     {
@@ -21,10 +22,14 @@ class AppFixtures extends Fixture
         // $product = new Product();
         // $manager->persist($product);
         UsersFactory::createMany(10);
-        TagFactory::createMany(2);
+        //TagFactory::createMany(2);
         CommentFactory::createMany(10);
         OfferFactory::createMany(4,[
-           'tag' => TagFactory::randomRange(0,2)
+           'tag' => TagFactory::createMany(5, function() {
+               $tag = $this->Tag[array_key_first($this->Tag)];
+               unset($this->Tag[array_key_first($this->Tag)]);
+               return ['name' => $tag];
+           })
         ]);
 
 
