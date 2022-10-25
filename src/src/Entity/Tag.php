@@ -16,8 +16,8 @@ class Tag
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(type: Types::JSON)]
-    private array $name = [];
+    #[ORM\Column]
+    private string $name;
 
     #[ORM\ManyToMany(targetEntity: Offer::class, mappedBy: 'tag')]
     private Collection $offers;
@@ -32,12 +32,12 @@ class Tag
         return $this->id;
     }
 
-    public function getName(): ?array
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function setName(array $name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
