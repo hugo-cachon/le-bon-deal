@@ -6,7 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\OfferFormController' => $baseDir . '/src/Controller/OfferFormController.php',
+    'App\\Controller\\RegistrationController' => $baseDir . '/src/Controller/RegistrationController.php',
     'App\\Controller\\SecurityController' => $baseDir . '/src/Controller/SecurityController.php',
+    'App\\Controller\\TestController' => $baseDir . '/src/Controller/TestController.php',
+    'App\\Controller\\TestLogController' => $baseDir . '/src/Controller/TestLogController.php',
     'App\\DataFixtures\\AppFixtures' => $baseDir . '/src/DataFixtures/AppFixtures.php',
     'App\\Entity\\Comment' => $baseDir . '/src/Entity/Comment.php',
     'App\\Entity\\Offer' => $baseDir . '/src/Entity/Offer.php',
@@ -16,6 +20,8 @@ return array(
     'App\\Factory\\OfferFactory' => $baseDir . '/src/Factory/OfferFactory.php',
     'App\\Factory\\TagFactory' => $baseDir . '/src/Factory/TagFactory.php',
     'App\\Factory\\UsersFactory' => $baseDir . '/src/Factory/UsersFactory.php',
+    'App\\Form\\OfferFormType' => $baseDir . '/src/Form/OfferFormType.php',
+    'App\\Form\\RegistrationFormType' => $baseDir . '/src/Form/RegistrationFormType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\CommentRepository' => $baseDir . '/src/Repository/CommentRepository.php',
     'App\\Repository\\OfferRepository' => $baseDir . '/src/Repository/OfferRepository.php',

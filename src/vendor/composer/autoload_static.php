@@ -454,7 +454,11 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
     );
 
     public static $classMap = array (
+        'App\\Controller\\OfferFormController' => __DIR__ . '/../..' . '/src/Controller/OfferFormController.php',
+        'App\\Controller\\RegistrationController' => __DIR__ . '/../..' . '/src/Controller/RegistrationController.php',
         'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
+        'App\\Controller\\TestController' => __DIR__ . '/../..' . '/src/Controller/TestController.php',
+        'App\\Controller\\TestLogController' => __DIR__ . '/../..' . '/src/Controller/TestLogController.php',
         'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
         'App\\Entity\\Comment' => __DIR__ . '/../..' . '/src/Entity/Comment.php',
         'App\\Entity\\Offer' => __DIR__ . '/../..' . '/src/Entity/Offer.php',
@@ -464,6 +468,8 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
         'App\\Factory\\OfferFactory' => __DIR__ . '/../..' . '/src/Factory/OfferFactory.php',
         'App\\Factory\\TagFactory' => __DIR__ . '/../..' . '/src/Factory/TagFactory.php',
         'App\\Factory\\UsersFactory' => __DIR__ . '/../..' . '/src/Factory/UsersFactory.php',
+        'App\\Form\\OfferFormType' => __DIR__ . '/../..' . '/src/Form/OfferFormType.php',
+        'App\\Form\\RegistrationFormType' => __DIR__ . '/../..' . '/src/Form/RegistrationFormType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\CommentRepository' => __DIR__ . '/../..' . '/src/Repository/CommentRepository.php',
         'App\\Repository\\OfferRepository' => __DIR__ . '/../..' . '/src/Repository/OfferRepository.php',
