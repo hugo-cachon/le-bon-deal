@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SearchbarController!{% endblock %}
+
+{% block body %}
+    <form method="GET" action="{{path('app_searchbar')}}">
+        <label>Search</label>
+        <input name="offer" type="text" />
+        <button type="submit">Submit</button>
+    </form>
+    {% for offer in offers %}
+        <div class="offer-container">
+            <p>Id : {{ offer.id }}</p>
+            <span>Title : {{ offer.title }}</span>
+        </div>
+    {% endfor %}
+{% endblock %}
