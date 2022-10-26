@@ -39,6 +39,21 @@ class OfferRepository extends ServiceEntityRepository
         }
     }
 
+    /*
+     * @return Offer[]
+     */
+    public function customQuery(?string $offerName): array
+    {
+        if (!$offerName) {
+            return [];
+        }
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.title LIKE :title')
+            ->setParameter('title', '%' . $offerName . '%')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Offer[] Returns an array of Offer objects
 //     */
