@@ -63,6 +63,7 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
+            'Symfony\\Component\\Asset\\' => 24,
             'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\SecurityBundle\\' => 30,
@@ -273,6 +274,10 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
         ),
+        'Symfony\\Component\\Asset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/asset',
+        ),
         'Symfony\\Bundle\\WebProfilerBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/web-profiler-bundle',
@@ -407,8 +412,8 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
         ),
         'Doctrine\\Common\\' => 
         array (
-            0 => __DIR__ . '/..' . '/doctrine/event-manager/src',
-            1 => __DIR__ . '/..' . '/doctrine/common/src',
+            0 => __DIR__ . '/..' . '/doctrine/common/src',
+            1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
         ),
         'Doctrine\\Bundle\\MigrationsBundle\\' => 
         array (
@@ -433,16 +438,25 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
     );
 
     public static $classMap = array (
+        'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
+        'App\\Controller\\allProductsController' => __DIR__ . '/../..' . '/src/Controller/allProductsController.php',
+        'App\\Controller\\contactPageController' => __DIR__ . '/../..' . '/src/Controller/contactPageController.php',
+        'App\\Controller\\indexController' => __DIR__ . '/../..' . '/src/Controller/indexController.php',
         'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
         'App\\Entity\\Comment' => __DIR__ . '/../..' . '/src/Entity/Comment.php',
+        'App\\Entity\\Offer' => __DIR__ . '/../..' . '/src/Entity/Offer.php',
         'App\\Entity\\Tag' => __DIR__ . '/../..' . '/src/Entity/Tag.php',
         'App\\Entity\\Users' => __DIR__ . '/../..' . '/src/Entity/Users.php',
         'App\\Factory\\CommentFactory' => __DIR__ . '/../..' . '/src/Factory/CommentFactory.php',
+        'App\\Factory\\OfferFactory' => __DIR__ . '/../..' . '/src/Factory/OfferFactory.php',
+        'App\\Factory\\TagFactory' => __DIR__ . '/../..' . '/src/Factory/TagFactory.php',
         'App\\Factory\\UsersFactory' => __DIR__ . '/../..' . '/src/Factory/UsersFactory.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\CommentRepository' => __DIR__ . '/../..' . '/src/Repository/CommentRepository.php',
+        'App\\Repository\\OfferRepository' => __DIR__ . '/../..' . '/src/Repository/OfferRepository.php',
         'App\\Repository\\TagRepository' => __DIR__ . '/../..' . '/src/Repository/TagRepository.php',
         'App\\Repository\\UsersRepository' => __DIR__ . '/../..' . '/src/Repository/UsersRepository.php',
+        'App\\Security\\LoginFormAuthenticator' => __DIR__ . '/../..' . '/src/Security/LoginFormAuthenticator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Attribute\\AsEntityListener' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Attribute/AsEntityListener.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Attribute\\AsMiddleware' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Attribute/AsMiddleware.php',
@@ -3109,6 +3123,23 @@ class ComposerStaticInit262d8f6ff22a88396b2264836d04f00c
         'Symfony\\Bundle\\WebProfilerBundle\\Profiler\\TemplateManager' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Profiler/TemplateManager.php',
         'Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Twig/WebProfilerExtension.php',
         'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/WebProfilerBundle.php',
+        'Symfony\\Component\\Asset\\Context\\ContextInterface' => __DIR__ . '/..' . '/symfony/asset/Context/ContextInterface.php',
+        'Symfony\\Component\\Asset\\Context\\NullContext' => __DIR__ . '/..' . '/symfony/asset/Context/NullContext.php',
+        'Symfony\\Component\\Asset\\Context\\RequestStackContext' => __DIR__ . '/..' . '/symfony/asset/Context/RequestStackContext.php',
+        'Symfony\\Component\\Asset\\Exception\\AssetNotFoundException' => __DIR__ . '/..' . '/symfony/asset/Exception/AssetNotFoundException.php',
+        'Symfony\\Component\\Asset\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/symfony/asset/Exception/ExceptionInterface.php',
+        'Symfony\\Component\\Asset\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/asset/Exception/InvalidArgumentException.php',
+        'Symfony\\Component\\Asset\\Exception\\LogicException' => __DIR__ . '/..' . '/symfony/asset/Exception/LogicException.php',
+        'Symfony\\Component\\Asset\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/asset/Exception/RuntimeException.php',
+        'Symfony\\Component\\Asset\\Package' => __DIR__ . '/..' . '/symfony/asset/Package.php',
+        'Symfony\\Component\\Asset\\PackageInterface' => __DIR__ . '/..' . '/symfony/asset/PackageInterface.php',
+        'Symfony\\Component\\Asset\\Packages' => __DIR__ . '/..' . '/symfony/asset/Packages.php',
+        'Symfony\\Component\\Asset\\PathPackage' => __DIR__ . '/..' . '/symfony/asset/PathPackage.php',
+        'Symfony\\Component\\Asset\\UrlPackage' => __DIR__ . '/..' . '/symfony/asset/UrlPackage.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\EmptyVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/EmptyVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\JsonManifestVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/JsonManifestVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\StaticVersionStrategy' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/StaticVersionStrategy.php',
+        'Symfony\\Component\\Asset\\VersionStrategy\\VersionStrategyInterface' => __DIR__ . '/..' . '/symfony/asset/VersionStrategy/VersionStrategyInterface.php',
         'Symfony\\Component\\Cache\\Adapter\\AbstractAdapter' => __DIR__ . '/..' . '/symfony/cache/Adapter/AbstractAdapter.php',
         'Symfony\\Component\\Cache\\Adapter\\AbstractTagAwareAdapter' => __DIR__ . '/..' . '/symfony/cache/Adapter/AbstractTagAwareAdapter.php',
         'Symfony\\Component\\Cache\\Adapter\\AdapterInterface' => __DIR__ . '/..' . '/symfony/cache/Adapter/AdapterInterface.php',

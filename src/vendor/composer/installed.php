@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e981a0498a4b19e3c94cadeeea58478faf777b09',
+        'reference' => '86eaf7b5529c7c0e4c438375c2a71d759db8fd89',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e981a0498a4b19e3c94cadeeea58478faf777b09',
+            'reference' => '86eaf7b5529c7c0e4c438375c2a71d759db8fd89',
             'dev_requirement' => false,
         ),
         'doctrine/annotations' => array(
@@ -298,6 +298,15 @@
             'provided' => array(
                 0 => '1.0|2.0|3.0',
             ),
+        ),
+        'symfony/asset' => array(
+            'pretty_version' => 'v6.1.5',
+            'version' => '6.1.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/asset',
+            'aliases' => array(),
+            'reference' => '6065b5edc36442cb1ba98dc40f7c7f6b9e154729',
+            'dev_requirement' => false,
         ),
         'symfony/cache' => array(
             'pretty_version' => 'v6.1.5',
