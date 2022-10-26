@@ -39,6 +39,18 @@ class OfferRepository extends ServiceEntityRepository
         }
     }
 
+    public function findUser($idOffer)
+    {
+        $qb = $this->createQueryBuilder('o')
+            ->addSelect('u')
+            ->innerJoin('o.user','u')
+            ->where('o.id = :idOffer')
+            ->setParameter('idOffer',$idOffer);
+
+        $query = $qb->getQuery();
+        return $query->execute();
+    }
+
 //    /**
 //     * @return Offer[] Returns an array of Offer objects
 //     */

@@ -1,0 +1,62 @@
+{% extends 'navbar.html.twig' %}
+{% block content %}
+        {% for offer in offers %}
+        <div class="ui grid">
+            <div class="two wide column"></div>
+
+            {# principal content (product information + question form) #}
+            <div class="eight wide column">
+                <img style="display: block; margin: auto;" class="ui medium rounded image" src="/image/cat.jpeg">
+                <h1>{{ offer.title }}</h1>
+                <h3>Price: {{ offer.price }} €</h3>
+                <h3>Description: {{offer.description}}</h3>
+                <div class="ui segment">
+                    <div class="ui form">
+                        <div class="field">
+                            <form action="#">
+                                <h4 class="ui dividing header">Personal informations</h4>
+                                <div class="two fields">
+                                    <div class="field">
+                                        <input type="text" name="firstname" placeholder="First name">
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" name="lastname" placeholder="Last name">
+                                    </div>
+                                </div>
+                                <h4 class="ui dividing header">Message & Question</h4>
+                                <textarea name="message"></textarea>
+                                <input class="ui green button" type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# seller informations #}
+            <div class="five wide column">
+                <div class="ui segment items">
+                    <div class="item">
+                        <div class="ui tiny circular image">
+                            <img src="/image/cat.jpeg">
+                        </div>
+                        <div class="content">
+                            <p class="header">
+                                {{ offer.user.firstname }}
+                                {{ offer.user.lastname }}
+                            </p>
+                            <div class="extra">
+                                <p>{{ offer.user.email }}</p>
+                            </div>
+                            <div class="description">
+                                <a href="#" class="ui green button">
+                                    Acheter
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+{% endblock %}
