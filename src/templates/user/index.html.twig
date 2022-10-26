@@ -1,0 +1,25 @@
+{% extends 'users.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+
+    <div class="grix xs4 md3 lg4 container">
+        <div class="col-xs4"><h1>Profil de {{ app.user.firstname }} {{ app.user.lastname }}</h1></div>
+        <div class="col-xs1">Nom :</div>
+        <div class="col-xs3">{{ app.user.lastname }}</div>
+        <div class="col-xs1">Prenom :</div>
+        <div class="col-xs3">{{ app.user.firstname }}</div>
+        <div class="col-xs1">Email :</div>
+        <div class="col-xs3">{{ app.user.email }}</div>
+        <div class="xs4">
+            <a href="#" class="btn shadow-1 rounded-1 blue">Modifier le profil</a>
+            <a href="#" class="btn shadow-1 rounded-1 blue">Normal le mot de passe</a>
+        </div>
+
+        <div class="col-xs4"><h1>Offre de {{ app.user.firstname }} {{ app.user.lastname }}</h1></div>
+        {% for  %}
+        <div class="col-xs1">Titre :</div>
+        <div class="col-xs3"></div>
+    </div>
+{% endblock %}
