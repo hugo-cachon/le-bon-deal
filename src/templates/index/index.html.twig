@@ -2,49 +2,79 @@
 
 {% block body %}
 
-<nav class="navbar navbar-expand-lg bg-dark text-white">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar scroll</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-between text-white" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll text-white" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Link</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+{% block stylesheets %}
+<link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+
+{% endblock %}
+
+<div class="bg-image" style="
+    background-image: url('https://images.unsplash.com/photo-1665761125867-2847a4e2600e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2NjcwNTI5OA&ixlib=rb-1.2.1&q=80&w=1080');
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;" >
+
+  <div class="container pb-5">
+    <div class="row py-5 align-items-center">
+      <div class="col-lg-6">
+        <h5 class="display-4 mb-4 font-weight-bold text-white ">A modular UI Kit for Bootstrap</h5>
+        <div class="d-flex star-rating mb-5"> <a href=""><i class="lni lni-star-filled"></i></a> <a href=""><i class="lni lni-star-filled"></i></a> <a href=""><i class="lni lni-star-filled"></i></a> <a href=""><i class="lni lni-star"></i></a> <a href=""><i class="lni lni-star"></i></a> </div>
+        <p class="h5 aa mb-4 pb-3 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nunc nisi, suscipit id dapibus sit amet, lacinia nec lorem. Aenean eget urna rutrum suscipit.</p>
+        <h3 class="text-white mb-5">5.20$</h3>
+        <div class="d-flex">
+        <a href="" class="btn btn-lg btn-danger mr-2"><i class="lni lni-apple mr-2"></i> Download for IOS</a>
+        <a href="" class="btn btn-lg btn-danger"><i class="lni lni-play-store mr-2"></i> Download for Android</a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-lg-right text-center mt-5 mt-lg-0">
+       
+      </div>
     </div>
   </div>
-</nav>
-
+</div>
 
 <div class="container text-center mt-5">
+<h2 class="mb-5">Explore Categories</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-  {% for tag in tags %}
-    <div class="col">{{ tag.title}}</div>
-{% endfor %}
+    {% for tag in tag %}
+    {% for name in tag.name %}
+    <div class="col">
+      <a href="#">
+        {{ name }}
+      </a>
+    </div>
+    {% endfor %}
+    {% endfor %}
   </div>
 </div>
+<div class="container text-center mt-5">
+  <h2 class="mb-5 text-center">Annonces en vedette</h2>
+  <div class="row "> 
+  {% for offer in offer|slice(0, 3) %}
+    <div class="col-sm-4">
+      <div class="card" style="width: 18rem;">
+          <img src="https://images.unsplash.com/photo-1665761125867-2847a4e2600e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY2NjcwNTI5OA&ixlib=rb-1.2.1&q=80&w=1080" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ offer.title }}</h5>
+            <p class="card-text">Some </p>
+            {# {% for price in offer.price %} #}
+            <p class="card-text"> {{ offer.price ?? "pas là" }}€</p>
+            {# {% endfor %} #}
+            <a href="{{ offer.id }}" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+    </div>
+      {% endfor %}
+</div>
+
+<div class="jumbotron mt-5">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
 {% endblock %}

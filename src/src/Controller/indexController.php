@@ -1,5 +1,8 @@
 <?php
 namespace App\Controller;
+use App\Entity\Tag;
+use App\Repository\TagRepository;
+use App\Repository\OfferRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,12 +15,17 @@ class indexController extends AbstractController {
      */
 
     #[Route('/', name: 'index')]
-    public function homepage() {
+    public function homepage(TagRepository $tagRepository, OfferRepository $offerRepository ) {
+        $tag = $tagRepository->findAll();
+        $offer = $offerRepository->findAll();
+
+        // dd($offer);
         return $this->render('index/index.html.twig', [
 
             'tag' => $tag,
-            'product' => $product,
-            'Testimonials' => $testimonials
+            'offer' => $offer
+            // 'product' => $product,
+            // 'testimonials' => $testimonials
         ]);
     }
 
