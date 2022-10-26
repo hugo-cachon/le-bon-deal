@@ -27,7 +27,7 @@ final class Version20221007134345 extends AbstractMigration
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('DROP TABLE comment');
+       $this->addSql('DROP TABLE comment');
         $this->addSql('DROP TABLE users');
     }
 }
