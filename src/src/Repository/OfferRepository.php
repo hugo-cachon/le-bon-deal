@@ -39,6 +39,33 @@ class OfferRepository extends ServiceEntityRepository
         }
     }
 
+    /*
+     * @return Offer[]
+     */
+    public function customQuery(?string $offerName): array
+    {
+        if (!$offerName) {
+            return [];
+        }
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.title LIKE :title')
+            ->setParameter('title', '%' . $offerName . '%')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findUser($idOffer)
+    {
+        $qb = $this->createQueryBuilder('o')
+            ->addSelect('u')
+            ->innerJoin('o.user','u')
+            ->where('o.id = :idOffer')
+            ->setParameter('idOffer',$idOffer);
+
+        $query = $qb->getQuery();
+        return $query->getOneOrNullResult();
+    }
+
 //    /**
 //     * @return Offer[] Returns an array of Offer objects
 //     */
