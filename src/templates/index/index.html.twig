@@ -60,7 +60,7 @@
             {# {% for price in offer.price %} #}
             <p class="card-text"> {{ offer.price ?? "pas là" }}€</p>
             {# {% endfor %} #}
-            <a href="{{ offer.id }}" class="btn btn-primary">Go somewhere</a>
+            <a href="{{ path("app_singleProduct",{idOffer:offer.id}) }}" class="btn btn-primary">See details</a>
           </div>
         </div>
     </div>
