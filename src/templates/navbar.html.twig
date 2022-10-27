@@ -5,20 +5,30 @@
             <img class="ui small image" src="/image/logo.png">
         </a>
     </div>
+        <a href="{{ path('allProduct') }}" class="item">All offer</a>
     <div class="ui simple dropdown item">
-        Product
+        Offer
         <i class="dropdown icon"></i>
         <div class="menu">
-            <a href="{{path("app_offer_form")}}" class="item">Add product</a>
-            <a href="#" class="item">Edit & delete product</a>
+
+            <a href="{{path("app_offer_form")}}" class="item">Add offer</a>
         </div>
     </div>
-    <a href="{{path("app_user")}}" class="item">Profile</a>
+
      <div class="right menu">
+         <a href="{{path("app_user")}}" class="item">Profile</a>
          <a href="{{path("app_logout")}}" class="ui item">Logout</a>
      </div>
     {% else %}
-        <a href="{{path("app_login")}}" class="item">Sign-in</a>
-        <a href="{{path("app_register")}}" class="item">Register</a>
+        <div class="item">
+            <a href="{{path("index")}}">
+                <img class="ui small image" src="/image/logo.png">
+            </a>
+        </div>
+        <a href="{{ path('allProduct') }}" class="item">All offer</a>
+        <div class="right menu">
+            <a href="{{path("app_login")}}" class="ui item">Sign-in</a>
+            <a href="{{path("app_register")}}" class="ui item">Register</a>
+        </div>
     {% endif %}
 </div>

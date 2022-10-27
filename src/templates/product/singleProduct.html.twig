@@ -9,6 +9,14 @@
                 <h1>{{ offer.title }}</h1>
                 <h3>Price: {{ offer.price }} €</h3>
                 <h3>Description: {{offer.description}}</h3>
+                {% if is_granted('ROLE_USER') %}
+                    {% for useroffer in app.user.offers %}
+                        {% if useroffer.id == offer.id %}
+                            <a href="{{ path('app_edit_offer',{id:offer.id}) }}" class="ui blue button">Modifier l'offre</a>
+                            <a href="{{ path('app_delete_offer',{id:offer.id}) }}" class="ui red button">Supprimer l'offre</a>
+                        {% endif%}
+                    {% endfor %}
+                {% endif %}
                 <div class="ui segment">
                     <div class="ui form">
                         <div class="field">
