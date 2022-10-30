@@ -18,27 +18,29 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body class="layout-sidenav">
+    <body>
     {% include ('navbar.html.twig')%}
 
-    <div id="example-sidenav" data-ax="sidenav" class="sidenav shadow-1 sidenav-fixed white">
-{#        <div class="sidenav-header">#}
-{#            <img class="sidenav-logo dropshadow-1" src="your_img_path" alt="Logo" />#}
-{#        </div>#}
-        <a href="{{ path('app_user') }}" class="sidenav-link">Mon profil</a>
-        <a href="{{ path('app_user_offers') }}" class="sidenav-link">Mes offres</a>
+    <div class="layout-sidenav">
+        <div id="example-sidenav" data-ax="sidenav" class="sidenav shadow-1 sidenav-fixed white">
+    {#        <div class="sidenav-header">#}
+    {#            <img class="sidenav-logo dropshadow-1" src="your_img_path" alt="Logo" />#}
+    {#        </div>#}
+            <a href="{{ path('app_user') }}" class="sidenav-link">Mon profil</a>
+            <a href="{{ path('app_user_offers') }}" class="sidenav-link">Mes offres</a>
 
+        </div>
+        <main>
+        <button data-target="example-sidenav"
+                class="btn rounded-1 press amaranth dark-1 hide-md-up">
+            Open sidenav
+        </button>
+            {% block body %}
+
+
+            {% endblock %}
+        </main>
     </div>
-    <main>
-    <button data-target="example-sidenav"
-            class="btn rounded-1 press amaranth dark-1 hide-md-up">
-        Open sidenav
-    </button>
-        {% block body %}
-
-
-        {% endblock %}
-    </main>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/axentix@2.2.1/dist/axentix.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
