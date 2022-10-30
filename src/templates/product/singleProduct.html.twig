@@ -5,46 +5,71 @@
 
             {# principal content (product information + question form) #}
             <div class="eight wide column">
+                <a href="{{ path('index')}}" class="ui gray button"><i class="reply all icon"></i>Home page</a>
                 <img style="display: block; margin: auto;" class="ui medium rounded image" src="/image/cat.jpeg">
                 <h1>{{ offer.title }}</h1>
-                <h3>Price: {{ offer.price }} €</h3>
-                <h3>Description: {{offer.description}}</h3>
+                <div class="ui section divider"></div>
+                <h3 class="ui header">{{ offer.price }} €</h3>
+                <h3>Publication date: {{offer.createdAt|date("m/d/Y")}}</h3>
+                <h3>City: {{offer.city}}</h3>
+                <div class="ui section divider"></div>
+                <h3 class="ui header">Description</h3>
+                <p>{{offer.description}}</p>
+                <div class="ui section divider"></div>
                 {% if is_granted('ROLE_USER') %}
-                    {% for useroffer in app.user.offers %}
-                        {% if useroffer.id == offer.id %}
+                    {% if app.user.id == offer.user.id %}
                             <a href="{{ path('app_edit_offer',{id:offer.id}) }}" class="ui blue button">Modifier l'offre</a>
                             <a href="{{ path('app_delete_offer',{id:offer.id}) }}" class="ui red button">Supprimer l'offre</a>
-                        {% endif%}
-                    {% endfor %}
-                {% endif %}
-                <div class="ui segment">
-                    <div class="ui form">
-                        <div class="field">
-                            <form action="#">
-                                <h4 class="ui dividing header">Personal informations</h4>
-                                <div class="two fields">
-                                    <div class="field">
-                                        <input type="text" name="firstname" placeholder="First name">
-                                    </div>
-                                    <div class="field">
-                                        <input type="text" name="lastname" placeholder="Last name">
-                                    </div>
-                                </div>
-                                <h4 class="ui dividing header">Message & Question</h4>
-                                <textarea name="message"></textarea>
+                    {%else%}
+                        <div class="ui segment form">
+                            <form class="field" method="post" action="{{path('app_singleProduct', {idOffer:offer.id})}}">
+                                <h4 class="ui dividing header">Question</h4>
+                                {{form_widget(form.text)}}
                                 <input class="ui green button" type="submit" value="Submit">
+                                {{form_rest(form)}}
                             </form>
                         </div>
+            {%endif%}
+                {% endif %}
+
+            <div class="ui section divider"></div>
+                {%for comment in comments%}
+                <div class="ui divided items">
+                    <div class="item">
+                        <div class="ui tiny image">
+                            <img src="/image/buyer.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="header">{{comment.user.firstname}} {{comment.user.lastname}}</div>
+                            <div class="description">Question & message: {{comment.text}}</div>
+                        </div>
                     </div>
+                    <div class="item">
+                    {%if comment.answer.text is defined%}
+                        <div class="ui tiny image">
+                            <img src="/image/seller.png"/>
+                        </div>
+                        <div class="content">
+                            <div class="header">{{offer.user.firstname}} {{offer.user.lastname}}</div>
+                            <div class="description">Answer: {{comment.answer.text}}</div>
+                        </div>
+                    {% elseif is_granted('ROLE_USER') %}
+                        {% if app.user.id == offer.user.id %}
+                            <a class="ui green button" href="{{path('app_answer', {idComment:comment.id, idOffer:offer.id})}}">Answer</a>
+                        {%endif%}
+                    {%endif%}
+                    </div>
+                    <div class="ui section divider"></div>
                 </div>
+                {%endfor%}
             </div>
 
             {# seller informations #}
             <div class="five wide column">
                 <div class="ui segment items">
                     <div class="item">
-                        <div class="ui tiny circular image">
-                            <img src="/image/cat.jpeg">
+                        <div class="ui tiny image">
+                            <img src="/image/seller.png">
                         </div>
                         <div class="content">
                             <p class="header">
@@ -53,11 +78,6 @@
                             </p>
                             <div class="extra">
                                 <p>{{ offer.user.email }}</p>
-                            </div>
-                            <div class="description">
-                                <a href="#" class="ui green button">
-                                    Acheter
-                                </a>
                             </div>
                         </div>
                     </div>

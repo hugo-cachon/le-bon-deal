@@ -1,0 +1,31 @@
+{%extends 'base.html.twig'%}
+
+{%block body%}
+    <div class="ui grid">
+        <div class="two wide column"></div>
+        <div class="eight wide column">
+            <a href="{{ path("app_singleProduct",{idOffer:offer.id})}}" class="ui gray button"><i class="reply all icon"></i>Return to the offer page</a>
+            <div class="ui segment items">
+                <div class="item">
+                    <div class="ui tiny image">
+                        <img src="/image/buyer.png"/>
+                    </div>
+                    <div class="content">
+                        <div class="header">{{comment.user.firstname}} {{comment.user.lastname}}</div>
+                        <div class="description">Question & message: {{comment.text}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui segment form">
+                <form class="field" method="post" action="{{path('app_answer', {idComment:comment.id, idOffer:offer.id})}}">
+                    <h4 class="ui dividing header">Answer</h4>
+                    {{form_widget(form.text)}}
+                    <input class="ui green button" type="submit" value="Submit">
+                    {{form_rest(form)}}
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{%endblock%}

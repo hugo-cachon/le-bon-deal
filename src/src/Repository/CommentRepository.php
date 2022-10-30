@@ -3,6 +3,8 @@
 namespace App\Repository;
 
 use App\Entity\Comment;
+use App\Entity\Offer;
+use App\Entity\Users;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -37,6 +39,15 @@ class CommentRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    public function createForOffer(Offer $offer, Users $user): Comment
+    {
+        $comment = new Comment();
+        $comment->setOffer($offer);
+        $comment->setUser($user);
+
+        return $comment;
     }
 
 //    /**

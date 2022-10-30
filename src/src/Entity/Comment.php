@@ -21,10 +21,14 @@ class Comment
     private ?\DateTimeInterface $created_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'comment')]
+    #[ORM\JoinColumn(onDelete: "CASCADE")]
     private ?Offer $offer = null;
 
     #[ORM\ManyToOne(inversedBy: 'comments')]
     private ?Users $user = null;
+
+    #[ORM\OneToOne(mappedBy: 'comment')]
+    private ?Answer $answer = null;
 
     public function getId(): ?int
     {
@@ -75,6 +79,28 @@ class Comment
     public function setUser(?Users $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getAnswer(): ?Answer
+    {
+        return $this->answer;
+    }
+
+    public function setAnswer(?Answer $answer): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($answer === null && $this->answer !== null) {
+            $this->answer->setComment(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($answer !== null && $answer->getComment() !== $this) {
+            $answer->setComment($this);
+        }
+
+        $this->answer = $answer;
 
         return $this;
     }
